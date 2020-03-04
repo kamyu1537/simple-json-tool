@@ -37,6 +37,10 @@ rl.on('line', input => {
   }
 
   if (index >= originalKeys.length) {
+    fs.writeFileSync(
+      path.join(process.cwd(), 'output.json'),
+      JSON.stringify(result, null, 2)
+    );
     process.exit();
   }
 
